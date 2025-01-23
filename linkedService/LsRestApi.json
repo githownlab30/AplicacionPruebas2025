@@ -1,0 +1,13 @@
+{
+	"name": "LsRestApi",
+	"properties": {
+		"description": "Conexion Anonima parra efectos de Prueba",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://randomuser.me/api/?results=2000",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
