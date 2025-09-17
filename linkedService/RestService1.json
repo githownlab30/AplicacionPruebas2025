@@ -1,0 +1,22 @@
+{
+	"name": "RestService1",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "Test/CesarGuerrero/RestApi",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Basic",
+			"userName": "CesarKey",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "S1",
+				"secretVersion": "v1"
+			}
+		}
+	}
+}
