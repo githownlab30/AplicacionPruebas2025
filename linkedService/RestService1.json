@@ -5,7 +5,7 @@
 		"type": "RestService",
 		"typeProperties": {
 			"url": "Test/CesarGuerrero/RestApi",
-			"enableServerCertificateValidation": false,
+			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
 	}
