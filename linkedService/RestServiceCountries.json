@@ -1,0 +1,13 @@
+{
+	"name": "RestServiceCountries",
+	"properties": {
+		"description": "API REST con la lista de paises",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://restcountries.com/v3.1/",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
