@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "data_rest_api_paises.json",
 				"folderPath": "Test/JuanManotas/data_facturacion",
 				"fileSystem": "bronze"
 			},
