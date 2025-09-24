@@ -1,0 +1,11 @@
+{
+	"name": "AzureDataLakeStorage1",
+	"properties": {
+		"description": "Conexion de datos al storage Azure Data Lake",
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://datalakepruebas2025.dfs.core.windows.net/"
+		}
+	}
+}
