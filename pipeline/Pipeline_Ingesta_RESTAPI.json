@@ -1,6 +1,105 @@
 {
-	"name": "pipeline1",
+	"name": "Pipeline_Ingesta_RESTAPI",
 	"properties": {
+		"activities": [
+			{
+				"name": "copy_data_storage02",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['name']['common']"
+								},
+								"sink": {
+									"name": "name_common"
+								}
+							},
+							{
+								"source": {
+									"path": "$['name']['official']"
+								},
+								"sink": {
+									"name": "name_official"
+								}
+							},
+							{
+								"source": {
+									"path": "$['name']['nativeName']['spa']['official']"
+								},
+								"sink": {
+									"name": "name_nativeName_spa_official"
+								}
+							},
+							{
+								"source": {
+									"path": "$['name']['nativeName']['spa']['common']"
+								},
+								"sink": {
+									"name": "name_nativeName_spa_common"
+								}
+							},
+							{
+								"source": {
+									"path": "$['languages']['spa']"
+								},
+								"sink": {
+									"name": "spa"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_REST_API",
+						"type": "DatasetReference",
+						"parameters": {
+							"status": "true",
+							"fields": "name,languages"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_STORAGE01",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
 		"annotations": []
 	}
 }
