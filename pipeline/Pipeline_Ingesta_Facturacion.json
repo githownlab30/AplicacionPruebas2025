@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "copy_data_rest",
+				"name": "copy_data_sftp",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
