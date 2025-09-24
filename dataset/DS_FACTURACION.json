@@ -1,0 +1,28 @@
+{
+	"name": "DS_FACTURACION",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SftpFacturacion",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "SftpLocation",
+				"fileName": "FacturacionMovilView.csv",
+				"folderPath": "/uploads/PruebaIngenieroDatos"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "NombreTienda;Fecha;Hora;NumeroAutorizacion;Moneda;MontoFactura;NombreCliente;ApellidoCliente;FechaNacimiento;Nacionalidad",
+				"type": "String"
+			}
+		]
+	}
+}
