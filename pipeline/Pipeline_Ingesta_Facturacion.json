@@ -41,19 +41,6 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "NombreTienda;Fecha;Hora;NumeroAutorizacion;Moneda;MontoFactura;NombreCliente;ApellidoCliente;FechaNacimiento;Nacionalidad",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "NombreTienda;Fecha;Hora;NumeroAutorizacion;MontoFactura;Moneda;NombreCliente;ApellidoCliente;FechaNacimiento;Nacionalidad",
-									"physicalType": "String"
-								}
-							}
-						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
