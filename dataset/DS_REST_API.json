@@ -1,0 +1,28 @@
+{
+	"name": "DS_REST_API",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestServiceCountries",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"status": {
+				"type": "string",
+				"defaultValue": "true"
+			},
+			"fields": {
+				"type": "string",
+				"defaultValue": "name,languages"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@concat('independent?status=', dataset().status, '&fields=', dataset().fields)",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}
